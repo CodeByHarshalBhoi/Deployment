@@ -31,9 +31,12 @@ async function main(){
 
 app.use(errorMiddleware)
 
-// app.get("/", (req, res)=>{
-//     res.send("hello")
-// })
+app.get("/", (req, res, next)=>{
+   return res.status(200).json({
+    success:true,
+    message:"Hello World"
+   })
+})
 
 app.listen(PORT, ()=>{
     console.log(`Server start on  port ${PORT}`)
